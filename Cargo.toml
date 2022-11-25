@@ -1,0 +1,9 @@
+[package]
+name = "bsod"
+version = "0.1.0"
+edition = "2021"
+authors = ["anna <luna@aixeria.com>"]
+repository = "https://github.com/pozm/bsod-rs/"
+description = "The safest library on the block. Calling the bsod function will cause a blue screen of death."
+[dependencies]
+windows = {version = "*", features = ["Win32_Foundation","Win32_System_LibraryLoader"]}
