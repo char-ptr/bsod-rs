@@ -7,4 +7,4 @@ repository = "https://github.com/pozm/bsod-rs/"
 description = "The safest library on the block. Calling the bsod function will cause a blue screen of death."
 license-file = "LICENSE"
 [dependencies]
-windows = {version = "*", features = ["Win32_Foundation","Win32_System_LibraryLoader"]}
+windows = {version = "0.43.0", features = ["Win32_Foundation","Win32_System_LibraryLoader"]}
