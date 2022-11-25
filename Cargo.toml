@@ -1,6 +1,6 @@
 [package]
 name = "bsod"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2021"
 authors = ["anna <luna@aixeria.com>"]
 repository = "https://github.com/pozm/bsod-rs/"

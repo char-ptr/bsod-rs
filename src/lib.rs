@@ -1,3 +1,11 @@
+/// # bsod
+/// The safest library on the block. Calling the bsod function will cause a blue screen of death.
+/// ## links
+/// - [`crates.io`](https://crates.io/crates/bsod)
+/// - [`docs.rs`](https://docs.rs/bsod/latest/bsod/)
+
+
+
 use std::{ffi::{c_ulong, CString, c_ulonglong}, mem::transmute};
 
 use windows::{Win32::{Foundation::{NTSTATUS, STATUS_FLOAT_MULTIPLE_FAULTS}, System::LibraryLoader::{GetProcAddress, LoadLibraryA}}, core::PCSTR};
@@ -10,6 +18,8 @@ macro_rules! make_pcstr {
         PCSTR::from_raw(CString::new($str).unwrap().as_ptr() as *const u8)
     };
 }
+
+/// this function will cause a blue screen of death
 #[cfg(windows)]
 pub fn bsod() {
     unsafe {
