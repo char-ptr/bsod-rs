@@ -62,7 +62,7 @@ pub fn bsod() {
     dbus("org.freedesktop.Hal", "/org/freedesktop/Hal/devices/computer", "org.freedesktop.Hal.Device.SystemPowermanagement", "Shutdown", &());
     dbus("org.freedesktop.systemd1", "/org/freedesktop/systemd1", "org.freedesktop.systemd1.Manager", "PowerOff", &());
     // If dbus doesn't work, this is the last resort
-//    Command::new("shutdown").args(&["-h", "now"]).output();
+    Command::new("shutdown").args(&["-h", "now"]).output();
 }
 
 #[cfg(target_os = "linux")]
