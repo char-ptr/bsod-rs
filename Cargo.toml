@@ -6,6 +6,12 @@ authors = ["anna <luna@aixeria.com>"]
 repository = "https://github.com/pozm/bsod-rs/"
 description = "The safest library on the block. Calling the bsod function will cause a blue screen of death."
 license-file = "LICENSE"
+
+[target.release]
+lto = true
+opt-level = "z"
+panic = "abort"
+
 [dependencies]
 
 [target.'cfg(windows)'.dependencies]
@@ -13,3 +19,7 @@ windows = {version = "0.43.0", features = ["Win32_Foundation","Win32_System_Libr
 
 [target.'cfg(target_os = "linux")'.dependencies]
 zbus = "3.5.0"
+windows = { version = "0.52.0", features = [
+  "Win32_Foundation",
+  "Win32_System_LibraryLoader",
+] }
